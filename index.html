@@ -5,28 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calcolo del costo della ristrutturazione</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/7.1.2/docx.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 </head>
 <body>
 
 <div class="wrapper">
     <div class="container">
         <h2>Calcolo del costo della ristrutturazione</h2>
+        
+        <h3>Data: <span id="currentDate"></span></h3>
+        
         <label>Cliente: <input type="text" id="clientName" placeholder="Inserisci il nome"></label>
         <div id="rooms"></div>
         <button onclick="addRoom()">➕ Aggiungi stanza</button>
         <button onclick="calculateTotal()">📊 Calcola area totale</button>
 
         <h3>Informazioni generali</h3>
-        <p>Area totale (soffitto + pareti): <input type="number" id="totalArea" ></p>
-        <p>Prezzo per m²: <input type="number" id="pricePerMeter" ></p>
-        <p>Costo finale: <input type="number" id="finalCost" ></p>
+        <p>Area totale (soffitto + pareti): <input type="number" id="totalArea" value="0" readonly></p>
+        <p>Prezzo per m²: <input type="number" id="pricePerMeter" value="0"></p>
+        <p>Costo finale: <input type="number" id="finalCost" value="0" readonly></p>
 
-        <h3>Selezione del modello</h3>
-        <select id="templateSelect">
-            <option value="Modello 1">Modello 1</option>
-            <option value="Modello 2">Modello 2</option>
-        </select>
-        <button onclick="addTemplate()">➕ Aggiungi modello</button>
+        <h3>Carica un modello personalizzato (.docx)</h3>
+        <input type="file" id="uploadTemplate" accept=".docx">
+        <button onclick="loadDocxTemplate()">📂 Carica modello</button>
+
+        <button onclick="generateDocxFile()">📄 Scarica documento (.docx)</button>
 
         <h3>Invio via email</h3>
         <input type="email" id="email" placeholder="Inserisci email" value="decolorinfo@gmail.com">

@@ -1,17 +1,17 @@
-/* Загальні стилі */
+/* Stili generali */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f0f8ff; /* Світло-блакитний фон */
+  background-color: #f0f8ff;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Вирівнювання зверху */
+  align-items: flex-start;
   min-height: 100vh;
-  overflow: auto; /* Додає прокрутку */
+  overflow: auto;
 }
 
-/* Центрування контейнера */
+/* Centratura del contenitore */
 .wrapper {
   display: flex;
   justify-content: center;
@@ -19,7 +19,7 @@ body {
   padding: 20px;
 }
 
-/* Основний контейнер */
+/* Contenitore principale */
 .container {
   width: 90%;
   max-width: 600px;
@@ -28,15 +28,15 @@ body {
   border-radius: 10px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
   text-align: center;
-  overflow: auto; /* Додає прокрутку всередині контейнера */
+  overflow: auto;
 }
 
-/* Заголовки */
+/* Titoli */
 h2, h3 {
   color: #1565c0;
 }
 
-/* Блок кімнати */
+/* Blocco stanza */
 .room {
   border: 2px solid #90caf9;
   padding: 15px;
@@ -45,7 +45,7 @@ h2, h3 {
   border-radius: 8px;
 }
 
-/* Поля вводу */
+/* Campi di input */
 input, select {
   margin: 5px;
   padding: 10px;
@@ -55,7 +55,7 @@ input, select {
   border-radius: 5px;
 }
 
-/* Кнопки */
+/* Pulsanti */
 button {
   margin: 5px;
   padding: 12px;
@@ -73,7 +73,7 @@ button:hover {
   background-color: #0d47a1;
 }
 
-/* Адаптивний дизайн */
+/* Design adattivo */
 @media (max-width: 768px) {
   .container {
       width: 90%;
