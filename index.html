@@ -1,28 +1,37 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Розрахунок вартості ремонту</title>
+    <title>Calcolo del costo della ristrutturazione</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="container">
-    <h2>Розрахунок вартості ремонту</h2>
-    <label>Клієнт: <input type="text" id="clientName" placeholder="Введіть ім'я"></label>
-    <div id="rooms"></div>
-    <button onclick="addRoom()">➕ Додати кімнату</button>
-    <button onclick="calculateTotal()">📊 Розрахувати загальну площу</button>
+<div class="wrapper">
+    <div class="container">
+        <h2>Calcolo del costo della ristrutturazione</h2>
+        <label>Cliente: <input type="text" id="clientName" placeholder="Inserisci il nome"></label>
+        <div id="rooms"></div>
+        <button onclick="addRoom()">➕ Aggiungi stanza</button>
+        <button onclick="calculateTotal()">📊 Calcola area totale</button>
 
-    <h3>Загальна інформація</h3>
-    <p>Загальна площа (стелі + стін): <input type="number" id="totalArea" value="0"></p>
-    <p>Ціна за м²: <input type="number" id="pricePerMeter" value="0"></p>
-    <p>Остаточна сума: <input type="number" id="finalCost" value="0"></p>
+        <h3>Informazioni generali</h3>
+        <p>Area totale (soffitto + pareti): <input type="number" id="totalArea" ></p>
+        <p>Prezzo per m²: <input type="number" id="pricePerMeter" ></p>
+        <p>Costo finale: <input type="number" id="finalCost" ></p>
 
-    <h3>Відправка на email</h3>
-    <input type="email" id="email" placeholder="Введіть email" value="decolorinfo@gmail.com">
-    <button onclick="sendEmail()">📩 Відправити</button>
+        <h3>Selezione del modello</h3>
+        <select id="templateSelect">
+            <option value="Modello 1">Modello 1</option>
+            <option value="Modello 2">Modello 2</option>
+        </select>
+        <button onclick="addTemplate()">➕ Aggiungi modello</button>
+
+        <h3>Invio via email</h3>
+        <input type="email" id="email" placeholder="Inserisci email" value="decolorinfo@gmail.com">
+        <button onclick="sendEmail()">📩 Invia</button>
+    </div>
 </div>
 
 <script src="script.js"></script>
