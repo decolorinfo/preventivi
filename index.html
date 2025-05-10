@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Розрахунок вартості ремонту</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Розрахунок вартості ремонту</h2>
+    <label>Клієнт: <input type="text" id="clientName" placeholder="Введіть ім'я"></label>
+    <div id="rooms"></div>
+    <button onclick="addRoom()">➕ Додати кімнату</button>
+    <button onclick="calculateTotal()">📊 Розрахувати загальну площу</button>
+
+    <h3>Загальна інформація</h3>
+    <p>Загальна площа (стелі + стін): <input type="number" id="totalArea" value="0"></p>
+    <p>Ціна за м²: <input type="number" id="pricePerMeter" value="0"></p>
+    <p>Остаточна сума: <input type="number" id="finalCost" value="0"></p>
+
+    <h3>Відправка на email</h3>
+    <input type="email" id="email" placeholder="Введіть email" value="decolorinfo@gmail.com">
+    <button onclick="sendEmail()">📩 Відправити</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
